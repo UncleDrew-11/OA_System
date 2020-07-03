@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jsj.dao.HandleDao">
+
+	
+	<select id="login" parameterType="Staff" resultType="StaffTable">
+	  select * from staff where logname=#{logname} and logpass = #{logpass}
+	</select>
+	
+
+
+
+	<select id="selectAllStaff" resultType="map">
+	 select  * from staff
+	</select>
+	<select id="selectAllStaffByPage" resultType="map">
+	 select  * from staff  limit #{startIndex},#{perPageSize}
+	</select>
+
+	<update id="updateStaff" parameterType="StaffTable">
+		update staff
+		<set>
+			staff_age=#{staff_age},
+			staff_class=#{staff_class},
+			staff_salary=#{staff_salary}
+		</set>
+		where logname=#{logname}
+	</update>
+
+	<delete id="deleteStaff" parameterType="StaffTable">
+		DELETE FROM staff WHERE logname = #{logname} and id = id
+	</delete>
+
+
+	<insert id="registerStaff" parameterType="StaffTable">
+		insert into staff(logname, logpass, staff_age, staff_class, staff_salary)
+		values (#{logname}, #{logpass}, #{staff_age}, #{staff_class}, #{staff_salary})
+	</insert>
+
+
+	<update id="updateClass" parameterType="ClassTable">
+		update class
+		<set>
+			class_name=#{class_name}
+		</set>
+		WHERE id = ${id}
+	</update>
+
+	<select id="selectAllClass" resultType="map">
+	 select  * from class
+	</select>
+	<select id="selectAllClassByPage" resultType="map">
+	 select  * from class limit #{startIndex},#{perPageSize}
+	</select>
+
+	<insert id="registerClass" parameterType="ClassTable">
+		insert into class(class_name)
+		values ( #{class_name})
+	</insert>
+</mapper>
