@@ -1,6 +1,7 @@
 package com.jsj.service;
 
 import com.jsj.model.Staff;
+import com.jsj.po.CardTable;
 import com.jsj.po.ClassTable;
 import com.jsj.po.StaffTable;
 import org.springframework.ui.Model;
@@ -16,4 +17,7 @@ public interface HandleService {
     public String selectAllClassByPage(Model modle ,Integer currentPage);
     public String updateClass(ClassTable classTable);
     public String registerClass(ClassTable classTable);
+    public String selectAllCardByPage(Model modle ,Integer currentPage);
+
+    public String registerCard(CardTable cardTable);
 }

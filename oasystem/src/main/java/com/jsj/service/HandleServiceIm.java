@@ -2,6 +2,7 @@ package com.jsj.service;
 
 import com.jsj.dao.HandleDao;
 import com.jsj.model.Staff;
+import com.jsj.po.CardTable;
 import com.jsj.po.ClassTable;
 import com.jsj.po.StaffTable;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -104,6 +105,31 @@ public class HandleServiceIm implements HandleService {
     @Override
     public String registerClass(ClassTable classTable) {
         handlDao.registerClass(classTable);
+        return "redirect:/handle/selectAllClassByPage?currentPage=1";
+    }
+
+    @Override
+    public String selectAllCardByPage(Model modle, Integer currentPage) {
+
+        List<Map<String,Object>> allCard = handlDao.selectAllCard();
+
+        //共多少个用户
+        int totalCount = allCard.size();
+        //计算共多少页
+        int pageSize = 5;
+        int totalPage = (int) Math.ceil(totalCount*1.0/pageSize);
+
+        List<Map<String,Object>> userByPage = handlDao.selectAllCardByPage((currentPage-1)*pageSize, pageSize);
+        modle.addAttribute("allCard",userByPage);
+        modle.addAttribute("totalPage",totalPage);
+        modle.addAttribute("currentPage",currentPage);
+
+        return "cardlist";
+    }
+
+    @Override
+    public String registerCard(CardTable cardTable) {
+        handlDao.registerCard(cardTable);
         return "redirect:/handle/selectAllClassByPage?currentPage=1";
     }
 

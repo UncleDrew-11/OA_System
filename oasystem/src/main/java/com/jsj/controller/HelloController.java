@@ -48,4 +48,9 @@ public class HelloController {
     public String registerClass() {
         return "registerClass";
     }
+
+    @RequestMapping("/registerCard")
+    public String registerCard() {
+        return "registerCard";
+    }
 }

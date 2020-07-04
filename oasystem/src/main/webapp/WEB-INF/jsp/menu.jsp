@@ -110,7 +110,7 @@ input{margin: 0;padding: 0;border: none;outline: none;}
      </div>
      
      <div class ="bd6">
-     <a href="#" class="mn6" id = 6>
+     <a href="selectAllCardByPage?currentPage=1" class="mn6" id = 6>
                 考勤打卡
         </a>
      </div>

@@ -1,12 +1,14 @@
 package com.jsj.controller;
 
 import com.jsj.model.Staff;
+import com.jsj.po.CardTable;
 import com.jsj.po.ClassTable;
 import com.jsj.po.StaffTable;
 import com.jsj.service.HandleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpSession;
@@ -78,4 +80,16 @@ public class HandleController {
         return handleService.registerClass(classTable);
     }
 
+    @RequestMapping("/selectAllCardByPage")
+    public String selectAllCardByPage(Model  model,Integer currentPage)
+    {
+        return handleService.selectAllCardByPage(model, currentPage);
+    }
+
+    @RequestMapping("/registerCard")
+    public String registerCard(CardTable cardTable)
+    {
+
+        return handleService.registerCard(cardTable);
+    }
 }

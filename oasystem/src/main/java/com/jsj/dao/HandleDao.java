@@ -3,6 +3,7 @@ package com.jsj.dao;
 //mybatis实现了他
 
 import com.jsj.model.Staff;
+import com.jsj.po.CardTable;
 import com.jsj.po.ClassTable;
 import com.jsj.po.StaffTable;
 import org.apache.ibatis.annotations.Mapper;
@@ -27,4 +28,10 @@ public interface HandleDao {
     public Integer updateClass(ClassTable classTable);
 
     public int registerClass(ClassTable classTable);
+
+
+    public List<Map<String,Object>> selectAllCard();
+    public List<Map<String ,Object>> selectAllCardByPage(@Param("startIndex") int startIndex,
+                                                          @Param("perPageSize") int perPageSize);
+    public int registerCard(CardTable cardTable);
 }
