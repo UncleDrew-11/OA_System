@@ -130,7 +130,7 @@ public class HandleServiceIm implements HandleService {
     @Override
     public String registerCard(CardTable cardTable) {
         handlDao.registerCard(cardTable);
-        return "redirect:/handle/selectAllClassByPage?currentPage=1";
+        return "redirect:/handle/selectAllCardByPage?currentPage=1";
     }
 
 }

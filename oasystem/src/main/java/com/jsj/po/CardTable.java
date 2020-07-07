@@ -1,20 +1,24 @@
 package com.jsj.po;
 
-import java.sql.Timestamp;
+import jdk.nashorn.internal.objects.annotations.Getter;
+import org.springframework.format.annotation.DateTimeFormat;
+
+import java.util.Date;
+
 
 public class CardTable {
-    private int id;
+    private Integer id;
     private String staff_id;
-    private Timestamp date_time;
+    @DateTimeFormat(pattern="yyyy-MM-dd hh:mm:ss")
+    private Date date_time;
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
-
 
     public String getStaff_id() {
         return staff_id;
@@ -24,8 +28,11 @@ public class CardTable {
         this.staff_id = staff_id;
     }
 
+    public Date getDate_time() {
+        return date_time;
+    }
 
-    public void setDate_time(Timestamp date_time) {
+    public void setDate_time(Date date_time) {
         this.date_time = date_time;
     }
 }

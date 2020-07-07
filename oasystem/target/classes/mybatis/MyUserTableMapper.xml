@@ -48,7 +48,7 @@
 
 	<insert id="registerCard" parameterType="CardTable">
 		insert into card (staff_id, date_time)
-		values (${staff_id}, ${date_time})
+		values (${staff_id}, #{date_time})
 	</insert>
 
 

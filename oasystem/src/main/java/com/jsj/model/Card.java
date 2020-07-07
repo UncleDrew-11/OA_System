@@ -1,7 +1,7 @@
 package com.jsj.model;
 
 public class Card {
-    private int id;
+    private Integer id;
     private String date_time;
 
     public int getId() {
