@@ -24,7 +24,7 @@
 					<li><a href="handle/menu">首页</a></li>
 					<li><a href="handle/selectAllStaffByPage?currentPage=1">员工信息管理</a></li>
 					<li><a href="handle/selectAllClassByPage?currentPage=1">部门信息管理</a></li>
-					<li><a href="PMain">个人信息管理</a></li>
+					<li><a href="handle/selectAllCardByPage?currentPage=1">打卡信息管理</a></li>
 					<li><a href="rMain">权限管理</a></li>
 				</ul>
 			</div>

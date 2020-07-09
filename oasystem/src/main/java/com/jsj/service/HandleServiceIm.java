@@ -30,7 +30,7 @@ public class HandleServiceIm implements HandleService {
         }
         model.addAttribute("erroMessage","用户名或密码错误！！");
 
-        return "login";
+        return "redirect:/";
     }
 
     @Override

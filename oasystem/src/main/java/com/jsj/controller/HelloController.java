@@ -53,4 +53,5 @@ public class HelloController {
     public String registerCard() {
         return "registerCard";
     }
+
 }

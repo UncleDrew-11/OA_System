@@ -92,4 +92,5 @@ public class HandleController {
 
         return handleService.registerCard(cardTable);
     }
+
 }

@@ -92,7 +92,7 @@ input{margin: 0;padding: 0;border: none;outline: none;}
      </div>
      
      <div class ="bd3">
-        <a href="PMain" class="mn3">
+        <a href="../chet.html" class="mn3">
                     公司群聊
         </a>
      </div>
